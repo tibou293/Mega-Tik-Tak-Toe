@@ -100,7 +100,39 @@ public class GameController : MonoBehaviour
         int s7 = markedSpaces[0] + markedSpaces[4] + markedSpaces[8]; //diagonal oben links -> unten rechts
         int s8 = markedSpaces[2] + markedSpaces[4] + markedSpaces[6]; //diagonal oben rechts -> unten links
 
-        var solutions = new int[] { s1, s2, s3, s4, s5, s6, s7, s8 };
+
+
+        int s9 = markedSpaces[9] + markedSpaces[10] + markedSpaces[11]; //horizontal oben
+        int s10 = markedSpaces[12] + markedSpaces[13] + markedSpaces[14]; //horizontal mitte
+        int s11 = markedSpaces[15] + markedSpaces[16] + markedSpaces[17]; //horizontal unten
+
+        int s12 = markedSpaces[9] + markedSpaces[12] + markedSpaces[15]; //vertikal links
+        int s13 = markedSpaces[10] + markedSpaces[13] + markedSpaces[16]; //vertikal mitte
+        int s14 = markedSpaces[11] + markedSpaces[14] + markedSpaces[17]; //vertikal rechts
+
+        int s15 = markedSpaces[9] + markedSpaces[13] + markedSpaces[17]; //diagonal oben links -> unten rechts
+        int s16 = markedSpaces[11] + markedSpaces[13] + markedSpaces[15]; //diagonal oben rechts -> unten links
+
+
+
+        int s17 = markedSpaces[18] + markedSpaces[19] + markedSpaces[20]; //horizontal oben
+        int s18 = markedSpaces[21] + markedSpaces[22] + markedSpaces[23]; //horizontal mitte
+        int s19 = markedSpaces[24] + markedSpaces[25] + markedSpaces[26]; //horizontal unten
+
+        int s20 = markedSpaces[18] + markedSpaces[21] + markedSpaces[24]; //vertikal links
+        int s21 = markedSpaces[19] + markedSpaces[22] + markedSpaces[25]; //vertikal mitte
+        int s22 = markedSpaces[20] + markedSpaces[23] + markedSpaces[26]; //vertikal rechts
+
+        int s23 = markedSpaces[18] + markedSpaces[22] + markedSpaces[26]; //diagonal oben links -> unten rechts
+        int s24 = markedSpaces[20] + markedSpaces[22] + markedSpaces[24]; //diagonal oben rechts -> unten links
+
+
+
+        var solutions = new int[] { s1, s2, s3, s4, s5, s6, s7, s8,
+                                    s9, s10, s11, s12, s13, s14, s15, s16,
+                                    s17, s18, s19, s20, s21, s22, s23, s24,
+                                    
+        };
 
         for(int i = 0; i < solutions.Length; i++)
         {
