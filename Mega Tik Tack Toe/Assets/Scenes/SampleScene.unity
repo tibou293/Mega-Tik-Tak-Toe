@@ -2004,7 +2004,7 @@ MonoBehaviour:
   - {fileID: 1820418983}
   - {fileID: 1261061442}
   - {fileID: 944526204}
-  markedSpaces: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+  markedSpaces: ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
   winnerText: {fileID: 1925096293}
   winningLine:
   - {fileID: 993358859}
@@ -2022,9 +2022,6 @@ MonoBehaviour:
   crossScoreText: {fileID: 379880049}
   starButton: {fileID: 1631953992}
   crossButton: {fileID: 2072463513}
-  feldClickAudio: {fileID: 2136976619}
-  restartClickAudio: {fileID: 694694235}
-  rematchClickAudio: {fileID: 49158450}
   closeButton: {fileID: 53413422}
 --- !u!4 &179326685
 Transform:
