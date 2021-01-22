@@ -167,8 +167,43 @@ public class GameController : MonoBehaviour
         int s48 = markedSpaces[47] + markedSpaces[49] + markedSpaces[51]; //diagonal oben rechts -> unten links
 
 
+        //u L
+        int s49 = markedSpaces[54] + markedSpaces[55] + markedSpaces[56]; //horizontal oben
+        int s50 = markedSpaces[57] + markedSpaces[58] + markedSpaces[59]; //horizontal mitte
+        int s51 = markedSpaces[60] + markedSpaces[61] + markedSpaces[62]; //horizontal unten
 
-    
+        int s52 = markedSpaces[54] + markedSpaces[57] + markedSpaces[60]; //vertikal links
+        int s53 = markedSpaces[55] + markedSpaces[58] + markedSpaces[61]; //vertikal mitte
+        int s54 = markedSpaces[56] + markedSpaces[59] + markedSpaces[62]; //vertikal rechts
+
+        int s55 = markedSpaces[54] + markedSpaces[58] + markedSpaces[62]; //diagonal oben links -> unten rechts
+        int s56 = markedSpaces[56] + markedSpaces[58] + markedSpaces[60]; //diagonal oben rechts -> unten links
+
+
+        //u M
+        int s57 = markedSpaces[63] + markedSpaces[64] + markedSpaces[65]; //horizontal oben
+        int s58 = markedSpaces[66] + markedSpaces[67] + markedSpaces[68]; //horizontal mitte
+        int s59 = markedSpaces[69] + markedSpaces[70] + markedSpaces[71]; //horizontal unten
+
+        int s60 = markedSpaces[63] + markedSpaces[66] + markedSpaces[69]; //vertikal links
+        int s61 = markedSpaces[64] + markedSpaces[67] + markedSpaces[70]; //vertikal mitte
+        int s62 = markedSpaces[65] + markedSpaces[68] + markedSpaces[71]; //vertikal rechts
+
+        int s63 = markedSpaces[63] + markedSpaces[67] + markedSpaces[71]; //diagonal oben links -> unten rechts
+        int s64 = markedSpaces[65] + markedSpaces[67] + markedSpaces[69]; //diagonal oben rechts -> unten links
+
+
+        //u R
+        int s65 = markedSpaces[72] + markedSpaces[73] + markedSpaces[74]; //horizontal oben
+        int s66 = markedSpaces[75] + markedSpaces[76] + markedSpaces[77]; //horizontal mitte
+        int s67 = markedSpaces[78] + markedSpaces[79] + markedSpaces[80]; //horizontal unten
+
+        int s68 = markedSpaces[72] + markedSpaces[75] + markedSpaces[78]; //vertikal links
+        int s69 = markedSpaces[73] + markedSpaces[76] + markedSpaces[79]; //vertikal mitte
+        int s70 = markedSpaces[74] + markedSpaces[77] + markedSpaces[80]; //vertikal rechts
+
+        int s71 = markedSpaces[72] + markedSpaces[76] + markedSpaces[80]; //diagonal oben links -> unten rechts
+        int s72 = markedSpaces[74] + markedSpaces[76] + markedSpaces[78]; //diagonal oben rechts -> unten links
 
 
         var solutions = new int[] { s1, s2, s3, s4, s5, s6, s7, s8,
@@ -177,6 +212,9 @@ public class GameController : MonoBehaviour
                                     s25, s26, s27, s28, s29, s30, s31, s32,
                                     s33, s34, s35, s36, s37, s38, s39, s40,
                                     s41, s42, s43, s44, s45, s46, s47, s48,
+                                    s49, s50, s51, s52, s53, s54, s55, s56,
+                                    s57, s58, s59, s60, s61, s62, s63, s64,
+                                    s65, s66, s67, s68, s69, s70, s71, s72,
                                     
         };
 
