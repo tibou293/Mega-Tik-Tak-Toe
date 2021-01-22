@@ -98,7 +98,7 @@ public class GameController : MonoBehaviour
         int s6 = markedSpaces[2] + markedSpaces[5] + markedSpaces[8]; //vertikal rechts
 
         int s7 = markedSpaces[0] + markedSpaces[4] + markedSpaces[8]; //diagonal oben links -> unten rechts
-        int s8 = markedSpaces[2] + markedSpaces[4] + markedSpaces[6]; //diagonal oben rechts -> unten links#
+        int s8 = markedSpaces[2] + markedSpaces[4] + markedSpaces[6]; //diagonal oben rechts -> unten links
 
         var solutions = new int[] { s1, s2, s3, s4, s5, s6, s7, s8 };
 
