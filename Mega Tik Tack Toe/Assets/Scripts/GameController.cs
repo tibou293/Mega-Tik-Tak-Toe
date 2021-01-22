@@ -89,6 +89,7 @@ public class GameController : MonoBehaviour
 
     void WinnerCheck()
     {
+        //o L
         int s1 = markedSpaces[0] + markedSpaces[1] + markedSpaces[2]; //horizontal oben
         int s2 = markedSpaces[3] + markedSpaces[4] + markedSpaces[5]; //horizontal mitte
         int s3 = markedSpaces[6] + markedSpaces[7] + markedSpaces[8]; //horizontal unten
@@ -101,7 +102,7 @@ public class GameController : MonoBehaviour
         int s8 = markedSpaces[2] + markedSpaces[4] + markedSpaces[6]; //diagonal oben rechts -> unten links
 
 
-
+        //o M
         int s9 = markedSpaces[9] + markedSpaces[10] + markedSpaces[11]; //horizontal oben
         int s10 = markedSpaces[12] + markedSpaces[13] + markedSpaces[14]; //horizontal mitte
         int s11 = markedSpaces[15] + markedSpaces[16] + markedSpaces[17]; //horizontal unten
@@ -114,7 +115,7 @@ public class GameController : MonoBehaviour
         int s16 = markedSpaces[11] + markedSpaces[13] + markedSpaces[15]; //diagonal oben rechts -> unten links
 
 
-
+        //o R
         int s17 = markedSpaces[18] + markedSpaces[19] + markedSpaces[20]; //horizontal oben
         int s18 = markedSpaces[21] + markedSpaces[22] + markedSpaces[23]; //horizontal mitte
         int s19 = markedSpaces[24] + markedSpaces[25] + markedSpaces[26]; //horizontal unten
@@ -127,10 +128,55 @@ public class GameController : MonoBehaviour
         int s24 = markedSpaces[20] + markedSpaces[22] + markedSpaces[24]; //diagonal oben rechts -> unten links
 
 
+        //m L
+        int s25 = markedSpaces[27] + markedSpaces[28] + markedSpaces[29]; //horizontal oben
+        int s26 = markedSpaces[30] + markedSpaces[31] + markedSpaces[32]; //horizontal mitte
+        int s27 = markedSpaces[33] + markedSpaces[34] + markedSpaces[35]; //horizontal unten
+
+        int s28 = markedSpaces[27] + markedSpaces[30] + markedSpaces[33]; //vertikal links
+        int s29 = markedSpaces[28] + markedSpaces[31] + markedSpaces[34]; //vertikal mitte
+        int s30 = markedSpaces[29] + markedSpaces[32] + markedSpaces[35]; //vertikal rechts
+
+        int s31 = markedSpaces[27] + markedSpaces[31] + markedSpaces[35]; //diagonal oben links -> unten rechts
+        int s32 = markedSpaces[29] + markedSpaces[31] + markedSpaces[33]; //diagonal oben rechts -> unten links
+
+
+        //m M
+        int s33 = markedSpaces[36] + markedSpaces[37] + markedSpaces[38]; //horizontal oben
+        int s34 = markedSpaces[39] + markedSpaces[40] + markedSpaces[41]; //horizontal mitte
+        int s35 = markedSpaces[42] + markedSpaces[43] + markedSpaces[44]; //horizontal unten
+
+        int s36 = markedSpaces[36] + markedSpaces[39] + markedSpaces[42]; //vertikal links
+        int s37 = markedSpaces[37] + markedSpaces[40] + markedSpaces[43]; //vertikal mitte
+        int s38 = markedSpaces[38] + markedSpaces[41] + markedSpaces[44]; //vertikal rechts
+
+        int s39 = markedSpaces[36] + markedSpaces[40] + markedSpaces[44]; //diagonal oben links -> unten rechts
+        int s40 = markedSpaces[38] + markedSpaces[40] + markedSpaces[42]; //diagonal oben rechts -> unten links
+
+
+        //m R
+        int s41 = markedSpaces[45] + markedSpaces[46] + markedSpaces[47]; //horizontal oben
+        int s42 = markedSpaces[48] + markedSpaces[49] + markedSpaces[50]; //horizontal mitte
+        int s43 = markedSpaces[51] + markedSpaces[52] + markedSpaces[53]; //horizontal unten
+
+        int s44 = markedSpaces[45] + markedSpaces[48] + markedSpaces[51]; //vertikal links
+        int s45 = markedSpaces[46] + markedSpaces[49] + markedSpaces[52]; //vertikal mitte
+        int s46 = markedSpaces[47] + markedSpaces[50] + markedSpaces[53]; //vertikal rechts
+
+        int s47 = markedSpaces[45] + markedSpaces[49] + markedSpaces[53]; //diagonal oben links -> unten rechts
+        int s48 = markedSpaces[47] + markedSpaces[49] + markedSpaces[51]; //diagonal oben rechts -> unten links
+
+
+
+    
+
 
         var solutions = new int[] { s1, s2, s3, s4, s5, s6, s7, s8,
                                     s9, s10, s11, s12, s13, s14, s15, s16,
                                     s17, s18, s19, s20, s21, s22, s23, s24,
+                                    s25, s26, s27, s28, s29, s30, s31, s32,
+                                    s33, s34, s35, s36, s37, s38, s39, s40,
+                                    s41, s42, s43, s44, s45, s46, s47, s48,
                                     
         };
 
