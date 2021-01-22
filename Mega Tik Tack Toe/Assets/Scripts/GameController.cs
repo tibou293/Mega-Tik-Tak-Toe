@@ -20,9 +20,6 @@ public class GameController : MonoBehaviour
     public Text crossScoreText;
     public Button starButton;
     public Button crossButton;
-    public AudioSource feldClickAudio;
-    public AudioSource restartClickAudio;
-    public AudioSource rematchClickAudio;
     public Button closeButton;
 
 
@@ -173,20 +170,6 @@ public class GameController : MonoBehaviour
             turnsIcons[0].SetActive(false);
             turnsIcons[1].SetActive(true);
         }
-    }
-
-    public void playClickAudio()
-    {
-        feldClickAudio.Play();
-    }
-    public void playRestartAudio()
-    {
-        restartClickAudio.Play();
-        Debug.Log("geht");
-    }
-    public void playRematchAudio()
-    {
-        rematchClickAudio.Play();
     }
 
     public void CloseButtonClick()
