@@ -182,6 +182,7 @@ public class GameController : MonoBehaviour
     public void playRestartAudio()
     {
         restartClickAudio.Play();
+        Debug.Log("geht");
     }
     public void playRematchAudio()
     {
