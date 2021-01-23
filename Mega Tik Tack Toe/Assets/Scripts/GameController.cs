@@ -21,6 +21,16 @@ public class GameController : MonoBehaviour
     public Button starButton;
     public Button crossButton;
     public Button closeButton;
+    int oneRight01;
+    int oneRight02;
+    int oneRight03;
+    int oneRight04;
+    int oneRight05;
+    int oneRight06;
+    int oneRight07;
+    int oneRight08;
+    int oneRight09;
+
 
 
     // Start is called before the first frame update
@@ -31,6 +41,15 @@ public class GameController : MonoBehaviour
 
     void GameSetup()
     {
+        oneRight01 = 0;
+        oneRight02 = 0;
+        oneRight03 = 0;
+        oneRight04 = 0;
+        oneRight05 = 0;
+        oneRight06 = 0;
+        oneRight07 = 0;
+        oneRight08 = 0;
+        oneRight09 = 0;
         whoTurn = 0;
         turnCount = 0;
         turnsIcons[0].SetActive(true);
@@ -104,15 +123,34 @@ public class GameController : MonoBehaviour
 
         var solutions = new int[] { s1, s2, s3, s4, s5, s6, s7, s8 };
 
+
+
         for (int i = 0; i < solutions.Length; i++)
         {
-            if (solutions[i] == 3 * (whoTurn + 1))
+
+            if (oneRight01 > 0)
             {
-                //  WinnerDisplay(i);
-                Debug.Log("Player " + whoTurn + " won the game!");
-                return;
+                break;
+            }
+            else
+            {
+                if (solutions[i] == 3 * (whoTurn + 1))
+                {
+
+                    oneRight01++;
+                    Debug.Log(oneRight01);
+                    //  WinnerDisplay(i);
+                    Debug.Log("Player " + whoTurn + " won the game!");
+
+                    return;
+
+                }
+
             }
         }
+
+
+
     }
 
 
@@ -165,11 +203,19 @@ public class GameController : MonoBehaviour
 
         for (int i = 0; i < solutions.Length; i++)
         {
-            if (solutions[i] == 3 * (whoTurn + 1))
+            if (oneRight02 > 0)
             {
-                //  WinnerDisplay(i);
-                Debug.Log("Player " + whoTurn + " won the game!");
-                return;
+                break;
+            }
+            else
+            {
+                if (solutions[i] == 3 * (whoTurn + 1))
+                {
+                    oneRight02++;
+                    //  WinnerDisplay(i);
+                    Debug.Log("Player " + whoTurn + " won the game!");
+                    return;
+                }
             }
         }
     }
@@ -225,11 +271,19 @@ public class GameController : MonoBehaviour
 
         for (int i = 0; i < solutions.Length; i++)
         {
-            if (solutions[i] == 3 * (whoTurn + 1))
+            if (oneRight03 > 0)
             {
-                //  WinnerDisplay(i);
-                Debug.Log("Player " + whoTurn + " won the game!");
-                return;
+                break;
+            }
+            else
+            {
+                if (solutions[i] == 3 * (whoTurn + 1))
+                {
+                    oneRight03++;
+                    //  WinnerDisplay(i);
+                    Debug.Log("Player " + whoTurn + " won the game!");
+                    return;
+                }
             }
         }
     }
@@ -284,11 +338,19 @@ public class GameController : MonoBehaviour
 
         for (int i = 0; i < solutions.Length; i++)
         {
-            if (solutions[i] == 3 * (whoTurn + 1))
+            if (oneRight04 > 0)
             {
-                //  WinnerDisplay(i);
-                Debug.Log("Player " + whoTurn + " won the game!");
-                return;
+                break;
+            }
+            else
+            {
+                if (solutions[i] == 3 * (whoTurn + 1))
+                {
+                    oneRight04++;
+                    //  WinnerDisplay(i);
+                    Debug.Log("Player " + whoTurn + " won the game!");
+                    return;
+                }
             }
         }
     }
@@ -343,11 +405,19 @@ public class GameController : MonoBehaviour
 
         for (int i = 0; i < solutions.Length; i++)
         {
-            if (solutions[i] == 3 * (whoTurn + 1))
+            if (oneRight05 > 0)
             {
-                //  WinnerDisplay(i);
-                Debug.Log("Player " + whoTurn + " won the game!");
-                return;
+                break;
+            }
+            else
+            {
+                if (solutions[i] == 3 * (whoTurn + 1))
+                {
+                    oneRight05++;
+                    //  WinnerDisplay(i);
+                    Debug.Log("Player " + whoTurn + " won the game!");
+                    return;
+                }
             }
         }
     }
@@ -402,11 +472,19 @@ public class GameController : MonoBehaviour
 
         for (int i = 0; i < solutions.Length; i++)
         {
-            if (solutions[i] == 3 * (whoTurn + 1))
+            if (oneRight06 > 0)
             {
-                //  WinnerDisplay(i);
-                Debug.Log("Player " + whoTurn + " won the game!");
-                return;
+                break;
+            }
+            else
+            {
+                if (solutions[i] == 3 * (whoTurn + 1))
+                {
+                    oneRight06++;
+                    //  WinnerDisplay(i);
+                    Debug.Log("Player " + whoTurn + " won the game!");
+                    return;
+                }
             }
         }
     }
@@ -460,11 +538,19 @@ public class GameController : MonoBehaviour
 
         for (int i = 0; i < solutions.Length; i++)
         {
-            if (solutions[i] == 3 * (whoTurn + 1))
+            if (oneRight07 > 0)
             {
-                //  WinnerDisplay(i);
-                Debug.Log("Player " + whoTurn + " won the game!");
-                return;
+                break;
+            }
+            else
+            {
+                if (solutions[i] == 3 * (whoTurn + 1))
+                {
+                    oneRight07++;
+                    //  WinnerDisplay(i);
+                    Debug.Log("Player " + whoTurn + " won the game!");
+                    return;
+                }
             }
         }
     }
@@ -519,11 +605,19 @@ public class GameController : MonoBehaviour
 
         for (int i = 0; i < solutions.Length; i++)
         {
-            if (solutions[i] == 3 * (whoTurn + 1))
+            if (oneRight08 > 0)
             {
-                //  WinnerDisplay(i);
-                Debug.Log("Player " + whoTurn + " won the game!");
-                return;
+                break;
+            }
+            else
+            {
+                if (solutions[i] == 3 * (whoTurn + 1))
+                {
+                    oneRight08++;
+                    //  WinnerDisplay(i);
+                    Debug.Log("Player " + whoTurn + " won the game!");
+                    return;
+                }
             }
         }
     }
@@ -578,11 +672,19 @@ public class GameController : MonoBehaviour
 
         for (int i = 0; i < solutions.Length; i++)
         {
-            if (solutions[i] == 3 * (whoTurn + 1))
+            if (oneRight09 > 0)
             {
-                //  WinnerDisplay(i);
-                Debug.Log("Player " + whoTurn + " won the game!");
-                return;
+                break;
+            }
+            else
+            {
+                if (solutions[i] == 3 * (whoTurn + 1))
+                {
+                    oneRight09++;
+                    //  WinnerDisplay(i);
+                    Debug.Log("Player " + whoTurn + " won the game!");
+                    return;
+                }
             }
         }
     }
