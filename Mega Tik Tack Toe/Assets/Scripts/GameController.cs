@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
     public GameObject[] turnsIcons; // zeigt wer dran ist
     public Sprite[] playIcons; //0=Star Icon and 1=Cross Icon
     public Button[] tictactoeSpaces; //freie Spielfelder
+    public GameObject[] bigField;
     public int[] markedSpaces; //Makiert was von wem angetippt wurde
     public Text winnerText; //der Text der angibt wer gewinnt
     public GameObject[] winningLine; //die Linien die einen Sieg makieren
@@ -74,6 +75,7 @@ public class GameController : MonoBehaviour
             Debug.Log("Close Application");
             Application.Quit();
         }
+      /*  changeField();  */
     }
 
     public void TicTacToeButton01(int WhichNumber)
@@ -688,6 +690,46 @@ public class GameController : MonoBehaviour
             }
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+  /*  void changeField()
+    {
+        var oL = new int[] {markedSpaces[0], markedSpaces[9], markedSpaces[18],
+                            markedSpaces[27], markedSpaces[36], markedSpaces[45],
+                            markedSpaces[54], markedSpaces[63], markedSpaces[72],};
+
+
+        for (var k = 0; k < oL.Length; k++)
+        {
+            if (oL[k] )
+            {
+                
+                Debug.Log(k);
+            }
+        }
+
+    }  */
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
