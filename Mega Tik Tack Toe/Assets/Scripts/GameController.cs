@@ -22,15 +22,8 @@ public class GameController : MonoBehaviour
     public Button starButton;
     public Button crossButton;
     public Button closeButton;
-    int oneRight01;
-    int oneRight02;
-    int oneRight03;
-    int oneRight04;
-    int oneRight05;
-    int oneRight06;
-    int oneRight07;
-    int oneRight08;
-    int oneRight09;
+
+    int[] winners;
 
 
 
@@ -42,15 +35,11 @@ public class GameController : MonoBehaviour
 
     void GameSetup()
     {
-        oneRight01 = 0;
-        oneRight02 = 0;
-        oneRight03 = 0;
-        oneRight04 = 0;
-        oneRight05 = 0;
-        oneRight06 = 0;
-        oneRight07 = 0;
-        oneRight08 = 0;
-        oneRight09 = 0;
+        winners = new int[9];
+        for(int i = 0; i < winners.Length; i++)
+        {
+            winners[i] = -1;
+        }
         whoTurn = 0;
         turnCount = 0;
         turnsIcons[0].SetActive(true);
@@ -82,6 +71,8 @@ public class GameController : MonoBehaviour
 
     void WinnerCheck(int bigSpaceNumber)
     {
+        if (winners[bigSpaceNumber] >= 0) return;
+
         int s1 = markedSpaces[0 + bigSpaceNumber * 9] + markedSpaces[1 + bigSpaceNumber * 9] + markedSpaces[2 + bigSpaceNumber * 9]; //horizontal oben
         int s2 = markedSpaces[3 + bigSpaceNumber * 9] + markedSpaces[4 + bigSpaceNumber * 9] + markedSpaces[5 + bigSpaceNumber * 9]; //horizontal mitte
         int s3 = markedSpaces[6 + bigSpaceNumber * 9] + markedSpaces[7 + bigSpaceNumber * 9] + markedSpaces[8 + bigSpaceNumber * 9]; //horizontal unten
@@ -102,18 +93,49 @@ public class GameController : MonoBehaviour
         {
             if (solutions[i] == 3 * (whoTurn + 1))
             {
-
+                winners[bigSpaceNumber] = whoTurn;
                 //  WinnerDisplay(i);
-                Debug.Log("Player " + whoTurn + " won the game!");
+                Debug.Log("Player " + whoTurn + " won a field!");
 
+                WinnerCheckAll();
                 return;
 
             }
         }
-
-
-
     }
+
+    void WinnerCheckAll()
+    {
+        int s1 = winners[0] + winners[1] + winners[2]; //horizontal oben
+        int s2 = winners[3] + winners[4] + winners[5]; //horizontal mitte
+        int s3 = winners[6] + winners[7] + winners[8]; //horizontal unten
+
+        int s4 = winners[0] + winners[3] + winners[6]; //vertikal links
+        int s5 = winners[1] + winners[4] + winners[7]; //vertikal mitte
+        int s6 = winners[2] + winners[5] + winners[8]; //vertikal rechts
+
+        int s7 = winners[0] + winners[4] + winners[8]; //diagonal oben links -> unten rechts
+        int s8 = winners[2] + winners[4] + winners[6]; //diagonal oben rechts -> unten links
+
+
+        var solutions = new int[] { s1, s2, s3, s4, s5, s6, s7, s8 };
+
+        Debug.Log(solutions );
+
+        for (int i = 0; i < solutions.Length; i++)
+        {
+            if (solutions[i] == 3 * (whoTurn + 1))
+            {
+                //  WinnerDisplay(i);
+                Debug.Log("Player " + whoTurn + " won the game!");
+                WinnerDisplay(whoTurn);
+                return;
+
+            }
+        }
+    }
+
+
     public void TicTacToeButton(int WhichNumber)
     {
         starButton.interactable = false;
@@ -148,12 +170,20 @@ public class GameController : MonoBehaviour
 
     void SetNewInteractable(int bigSpaceNumber)
     {
+        int n = 0;
         for(int i = 0; i < 81; i++)
         {
             if (markedSpaces[i] > 0) continue;
+
             //tictactoeSpaces[i].gameObject.SetActive((i / 9) == bigSpaceNumber);
-            tictactoeSpaces[i].interactable = (i / 9) == bigSpaceNumber;
+            bool interactable = bigSpaceNumber == -1 || (i / 9) == bigSpaceNumber;
+            tictactoeSpaces[i].interactable = interactable;
+            n += interactable ? 1 : 0;
         }
+
+        if (n == 0 && bigSpaceNumber == -1) WinnerDisplay(-1);
+        if (n == 0) SetNewInteractable(-1);
+        
     }
 
 
@@ -171,6 +201,10 @@ public class GameController : MonoBehaviour
             crossScore++;
             crossScoreText.text = crossScore.ToString();
             winnerText.text = "Cross Wins!";
+        }
+        else if (whoTurn == -1)
+        {
+            winnerText.text = "Tie";
         }
 
         winningLine[indexIn].SetActive(true);
