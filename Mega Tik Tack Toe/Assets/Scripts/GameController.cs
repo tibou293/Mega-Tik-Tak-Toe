@@ -142,56 +142,19 @@ public class GameController : MonoBehaviour
             turnsIcons[0].SetActive(true);
             turnsIcons[1].SetActive(false);
         }
+
+        SetNewInteractable(WhichNumber % 9);
     }
 
-
-
-
-
-
-
-
-
-
-
-
-  /*  void changeField()
+    void SetNewInteractable(int bigSpaceNumber)
     {
-        var oL = new int[] {markedSpaces[0], markedSpaces[9], markedSpaces[18],
-                            markedSpaces[27], markedSpaces[36], markedSpaces[45],
-                            markedSpaces[54], markedSpaces[63], markedSpaces[72],};
-
-
-        for (var k = 0; k < oL.Length; k++)
+        for(int i = 0; i < 81; i++)
         {
-            if (oL[k] )
-            {
-                
-                Debug.Log(k);
-            }
+            if (markedSpaces[i] > 0) continue;
+            //tictactoeSpaces[i].gameObject.SetActive((i / 9) == bigSpaceNumber);
+            tictactoeSpaces[i].interactable = (i / 9) == bigSpaceNumber;
         }
-
-    }  */
-
-
-
-    // hallo
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    }
 
 
     void WinnerDisplay(int indexIn)
