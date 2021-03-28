@@ -206,7 +206,7 @@ public class GameController : MonoBehaviour
             crossScoreText.text = crossScore.ToString();
             winnerText.text = "Cross Wins!";
         }
-        else if (whoTurn == -1)
+        else if (whoTurn == -100)
         {
             winnerText.text = "Tie";
         }
