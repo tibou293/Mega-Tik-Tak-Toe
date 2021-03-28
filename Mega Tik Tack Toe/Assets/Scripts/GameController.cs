@@ -23,7 +23,7 @@ public class GameController : MonoBehaviour
     public Button crossButton;
     public Button closeButton;
 
-    int[] winners;
+    public int[] winners;
 
 
 
@@ -38,7 +38,7 @@ public class GameController : MonoBehaviour
         winners = new int[9];
         for(int i = 0; i < winners.Length; i++)
         {
-            winners[i] = -1;
+            winners[i] = -100;
         }
         whoTurn = 0;
         turnCount = 0;
@@ -64,7 +64,6 @@ public class GameController : MonoBehaviour
             Debug.Log("Close Application");
             Application.Quit();
         }
-      /*  changeField();  */
     }
 
 
@@ -91,6 +90,7 @@ public class GameController : MonoBehaviour
 
         for (int i = 0; i < solutions.Length; i++)
         {
+            Debug.Log("hallo" + solutions);
             if (solutions[i] == 3 * (whoTurn + 1))
             {
                 winners[bigSpaceNumber] = whoTurn;
@@ -119,12 +119,13 @@ public class GameController : MonoBehaviour
 
 
         var solutions = new int[] { s1, s2, s3, s4, s5, s6, s7, s8 };
+       
 
-        Debug.Log(solutions );
 
         for (int i = 0; i < solutions.Length; i++)
         {
-            if (solutions[i] == 3 * (whoTurn + 1))
+
+            if (solutions[i] == 3 * (whoTurn))
             {
                 //  WinnerDisplay(i);
                 Debug.Log("Player " + whoTurn + " won the game!");
@@ -134,7 +135,7 @@ public class GameController : MonoBehaviour
             }
         }
     }
-
+   
 
     public void TicTacToeButton(int WhichNumber)
     {
