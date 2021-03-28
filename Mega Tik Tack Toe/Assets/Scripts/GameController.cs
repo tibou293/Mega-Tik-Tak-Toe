@@ -23,7 +23,7 @@ public class GameController : MonoBehaviour
     public Button crossButton;
     public Button closeButton;
 
-    public int[] winners;
+    public int[] winners; //Gewinner eines großen Feldes
 
 
 
@@ -33,6 +33,7 @@ public class GameController : MonoBehaviour
         GameSetup();
     }
 
+    //Die Grundeinstellungen am anfang des Spiels
     void GameSetup()
     {
         winners = new int[9];
@@ -67,7 +68,7 @@ public class GameController : MonoBehaviour
     }
 
 
-
+    //Checkt die sige in den kleinen Feldern
     void WinnerCheck(int bigSpaceNumber)
     {
         if (winners[bigSpaceNumber] >= 0) return;
@@ -104,6 +105,7 @@ public class GameController : MonoBehaviour
         }
     }
 
+    //Checkt den Sieg im großen Feld
     void WinnerCheckAll()
     {
         int s1 = winners[0] + winners[1] + winners[2]; //horizontal oben
@@ -169,6 +171,7 @@ public class GameController : MonoBehaviour
         SetNewInteractable(WhichNumber % 9);
     }
 
+    //gibt an, welche Felder als nächstes bespielt werden können
     void SetNewInteractable(int bigSpaceNumber)
     {
         int n = 0;
@@ -187,7 +190,7 @@ public class GameController : MonoBehaviour
         
     }
 
-
+    //Das Display am Ende, auf dem Steht wer gewonnen hat
     void WinnerDisplay(int indexIn)
     {
         winnerPanel.gameObject.SetActive(true);
@@ -212,6 +215,7 @@ public class GameController : MonoBehaviour
 
     }
 
+    //Nochmal Knopf (Spielstand wird nicht zurückgesetzt)
     public void Rematch()
     {
         starButton.interactable = true;
@@ -225,6 +229,7 @@ public class GameController : MonoBehaviour
         winnerPanel.SetActive(false);
     }
 
+    //Neustart Knopf (StRTET DAS GESAMTE SPIEL NEU: Spielstand wird zurückgesetzt)
     public void Restart()
     {
         Rematch();
@@ -234,7 +239,7 @@ public class GameController : MonoBehaviour
         crossScoreText.text = "0";
     }
 
-
+    //Die Auswahl des Startspielers am Anfang der Runde
     public void SwitchPlayer(int whichPlayer)
     {
         if(whichPlayer == 0)
@@ -251,6 +256,7 @@ public class GameController : MonoBehaviour
         }
     }
 
+    //Knopf zum schließen
     public void CloseButtonClick()
     {
         Application.Quit();
