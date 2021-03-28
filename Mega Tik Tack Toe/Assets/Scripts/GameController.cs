@@ -26,7 +26,6 @@ public class GameController : MonoBehaviour
     public int[] winners; //Gewinner eines großen Feldes
 
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -94,10 +93,10 @@ public class GameController : MonoBehaviour
             Debug.Log("hallo" + solutions);
             if (solutions[i] == 3 * (whoTurn + 1))
             {
+               
                 winners[bigSpaceNumber] = whoTurn;
                 //  WinnerDisplay(i);
                 Debug.Log("Player " + whoTurn + " won a field!");
-
                 WinnerCheckAll();
                 return;
 
@@ -105,8 +104,9 @@ public class GameController : MonoBehaviour
         }
     }
 
+
     //Checkt den Sieg im großen Feld
-    void WinnerCheckAll()
+    public void WinnerCheckAll()
     {
         int s1 = winners[0] + winners[1] + winners[2]; //horizontal oben
         int s2 = winners[3] + winners[4] + winners[5]; //horizontal mitte
@@ -131,7 +131,7 @@ public class GameController : MonoBehaviour
             {
                 //  WinnerDisplay(i);
                 Debug.Log("Player " + whoTurn + " won the game!");
-                WinnerDisplay(whoTurn);
+                WinnerDisplay(i);
                 return;
 
             }
@@ -190,9 +190,19 @@ public class GameController : MonoBehaviour
         
     }
 
+    
+
+
+
+
+
+
+
+
     //Das Display am Ende, auf dem Steht wer gewonnen hat
     void WinnerDisplay(int indexIn)
     {
+        Debug.Log(indexIn);
         winnerPanel.gameObject.SetActive(true);
         if (whoTurn == 0)
         {
@@ -206,7 +216,7 @@ public class GameController : MonoBehaviour
             crossScoreText.text = crossScore.ToString();
             winnerText.text = "Cross Wins!";
         }
-        else if (whoTurn == -100)
+        else if (whoTurn == -1)
         {
             winnerText.text = "Tie";
         }
