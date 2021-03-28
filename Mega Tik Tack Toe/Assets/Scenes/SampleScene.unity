@@ -12212,7 +12212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   feldClickAudio: {fileID: 2136976619}
   restartClickAudio: {fileID: 694694235}
-  rematchClickAudio: {fileID: 694694235}
+  rematchClickAudio: {fileID: 49158450}
 --- !u!4 &1755647929
 Transform:
   m_ObjectHideFlags: 0
