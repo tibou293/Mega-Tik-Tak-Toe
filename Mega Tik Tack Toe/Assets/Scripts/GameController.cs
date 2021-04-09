@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 public class GameController : MonoBehaviour
 {
 
@@ -23,6 +24,7 @@ public class GameController : MonoBehaviour
     public Button crossButton;
     public Button closeButton;
     public Button[] winningGrid;
+
 
     public int[] winners; //Gewinner eines großen Feldes
 
@@ -50,7 +52,11 @@ public class GameController : MonoBehaviour
             tictactoeSpaces[i].interactable = true;
             tictactoeSpaces[i].GetComponent<Image>().sprite = null;
         }
-        for(int i = 0; i < markedSpaces.Length; i++)
+        for (int i = 0; i < winningGrid.Length; i++)
+        {
+            winningGrid[i].GetComponent<Image>().sprite = null;
+        }
+        for (int i = 0; i < markedSpaces.Length; i++)
         {
             markedSpaces[i] = -100;
         }
