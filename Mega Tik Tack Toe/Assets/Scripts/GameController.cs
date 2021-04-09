@@ -22,6 +22,7 @@ public class GameController : MonoBehaviour
     public Button starButton;
     public Button crossButton;
     public Button closeButton;
+    public Button[] winningGrid;
 
     public int[] winners; //Gewinner eines großen Feldes
 
@@ -93,7 +94,7 @@ public class GameController : MonoBehaviour
             Debug.Log("hallo" + solutions);
             if (solutions[i] == 3 * (whoTurn + 1))
             {
-               
+                winningGrid[bigSpaceNumber].image.sprite = playIcons[whoTurn];
                 winners[bigSpaceNumber] = whoTurn;
                 //  WinnerDisplay(i);
                 Debug.Log("Player " + whoTurn + " won a field!");
