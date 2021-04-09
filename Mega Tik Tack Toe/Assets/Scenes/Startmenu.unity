@@ -273,6 +273,7 @@ MonoBehaviour:
   PreferencesPanel: {fileID: 664498056}
   SoundeffectToggle: {fileID: 494047072}
   AudioScript: {fileID: 139814088}
+  SoundActiv: 0
 --- !u!4 &390837038
 Transform:
   m_ObjectHideFlags: 0
@@ -1275,7 +1276,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 289.8, y: 152.79}
+  m_AnchoredPosition: {x: 280.5, y: 148.63}
   m_SizeDelta: {x: 35, y: 35}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1707147033

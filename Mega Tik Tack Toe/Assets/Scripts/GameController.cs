@@ -67,7 +67,7 @@ public class GameController : MonoBehaviour
     }
 
 
-    //Checkt die sige in den kleinen Feldern
+    //Checkt die Sige in den kleinen Feldern
     void WinnerCheck(int bigSpaceNumber)
     {
         if (winners[bigSpaceNumber] >= 0) return;
