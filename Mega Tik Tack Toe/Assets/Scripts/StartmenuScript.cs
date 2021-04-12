@@ -7,24 +7,29 @@ public class StartmenuScript : MonoBehaviour
 {
     public GameObject PreferencesWheel;
     public int Rotate = 1; //Start value of PreferencesWheelRotation
-    public Button StartButton;
-    public Button TutorialButton;
+    public GameObject StartButton;
+    public GameObject TutorialButton;
     public GameObject TitleText;
-
+    public int yStartButton = 90;
+    public int yTutorialButton = 117;
+    public int yTitleText = 271;
 
 
     // Start is called before the first frame update
     void Start()
-    {
-        beforeStart();
-        StartCoroutine(introGame());
+    { 
+
     }
     // Update is called once per frame
     void Update()
     {
-
+        beforeStart();
         preferencesWheelRotation();
+        //änderung();
+        StartCoroutine(introGame());
     }
+
+
 
 
 
@@ -45,22 +50,69 @@ public class StartmenuScript : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
+
+
     void beforeStart()
     {
-        StartButton.transform.position = new Vector3 (-411, -20, 103);
-        TutorialButton.transform.position = new Vector3(-151, -10, 53);
-        TitleText.transform.position = new Vector3(237, 271, 229);
+        StartButton.transform.position = new Vector3 (173, yStartButton, 199);
+        TutorialButton.transform.position = new Vector3(319, yTutorialButton, 249);
+        TitleText.transform.position = new Vector3(237, yTitleText, 229);
     }
 
 
     IEnumerator introGame()
     {
+        if (yTitleText > 133)
+        {
+            yTitleText--;
+        }
+        else
+        {
+            yTitleText = 133;
+        }
         yield return new WaitForSeconds(1f);
-        //StartButton.transform.position.
-        yield return new WaitForSeconds(2f);
-        Debug.Log("du da");
-    }
 
+        if (yStartButton < 194)
+        {
+            yStartButton++;
+        }
+        else
+        {
+            yStartButton = 194;
+        }
+        yield return new WaitForSeconds(1f);
+        if (yTutorialButton < 190)
+        {
+            yTutorialButton++;
+        }
+        else
+        {
+            yTutorialButton = 190;
+        }
+    }
 }
+
+   /* void änderung()
+    {
+        if (yStartButton < 194)
+        {
+            yStartButton++;
+        }
+        else
+        {
+            yStartButton = 194;
+        }
+
+        if (yTutorialButton < 190)
+        {
+            yTutorialButton++;
+        }
+        else
+        {
+            yTutorialButton = 190;
+        }
+    }*/
+
+
 
 
