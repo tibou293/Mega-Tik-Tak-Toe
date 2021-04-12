@@ -7,13 +7,17 @@ public class StartmenuScript : MonoBehaviour
 {
     public GameObject PreferencesWheel;
     public int Rotate = 1; //Start value of PreferencesWheelRotation
+    public Button StartButton;
+    public Button TutorialButton;
+    public GameObject TitleText;
 
 
 
     // Start is called before the first frame update
     void Start()
     {
-
+        beforeStart();
+        StartCoroutine(introGame());
     }
     // Update is called once per frame
     void Update()
@@ -38,10 +42,24 @@ public class StartmenuScript : MonoBehaviour
     //Auf Knopfdruck "Start Game" startet das Spiel
     public void switchScene()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
+    }
+
+    void beforeStart()
+    {
+        StartButton.transform.position = new Vector3 (-411, -20, 103);
+        TutorialButton.transform.position = new Vector3(-151, -10, 53);
+        TitleText.transform.position = new Vector3(237, 271, 229);
     }
 
 
+    IEnumerator introGame()
+    {
+        yield return new WaitForSeconds(1f);
+        //StartButton.transform.position.
+        yield return new WaitForSeconds(2f);
+        Debug.Log("du da");
+    }
 
 }
 
