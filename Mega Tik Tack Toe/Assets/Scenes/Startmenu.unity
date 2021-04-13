@@ -1580,7 +1580,7 @@ MonoBehaviour:
   TimeOfDay: 0
   Sun: {fileID: 1073995434}
   Moon: {fileID: 2082754662}
-  orbitSpeed: 1
+  orbitSpeed: 0.3
 --- !u!1 &986432993
 GameObject:
   m_ObjectHideFlags: 0
@@ -2549,6 +2549,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1396989863}
   m_CullTransparentMesh: 0
+--- !u!1 &1412866070 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 514336b91e2f28c419dfbdcbcfd1ae9e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1637989881}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1412866071
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1412866070}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e5cb70fd7e102e446aacdbfc27dcad5e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1441180816
 GameObject:
   m_ObjectHideFlags: 0
@@ -2643,17 +2668,17 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 514336b91e2f28c419dfbdcbcfd1ae9e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -509.73428
+      value: -561
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 514336b91e2f28c419dfbdcbcfd1ae9e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -229.03387
+      value: -229.0339
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 514336b91e2f28c419dfbdcbcfd1ae9e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -227.99374
+      value: -227.9937
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 514336b91e2f28c419dfbdcbcfd1ae9e,
         type: 3}
