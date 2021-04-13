@@ -202,11 +202,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 4394f3dbb5fec1744b9f86c601e76a5b, type: 2}
+      objectReference: {fileID: 2100000, guid: 518ab95b29dfdd249a48b50180bf8e35, type: 2}
     - target: {fileID: -927199367670048503, guid: 37c95ba8086d5ff40bef2876a765dceb,
         type: 3}
       propertyPath: m_Name
       value: Nur Meer von heightmap (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 37c95ba8086d5ff40bef2876a765dceb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37c95ba8086d5ff40bef2876a765dceb, type: 3}
@@ -1148,9 +1153,12 @@ MonoBehaviour:
   StartButton: {fileID: 1228652221}
   TutorialButton: {fileID: 1107402962}
   TitleText: {fileID: 877463222}
-  yStartButton: -20
-  yTutorialButton: -10
-  yTitleText: 271
+  StartYStartButton: 90
+  StartYTutorialButton: 117
+  StartYTitleText: 300
+  EndYStartButton: 194
+  EndYTutorialButton: 190
+  EndYTitleText: 40
 --- !u!4 &667389780
 Transform:
   m_ObjectHideFlags: 0
@@ -1418,7 +1426,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 877463222}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 229}
+  m_LocalPosition: {x: 0, y: 0, z: 185}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1833984018}
@@ -1427,8 +1435,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 237.5, y: 133.5}
-  m_SizeDelta: {x: 475, y: 267}
+  m_AnchoredPosition: {x: 267.2, y: 20.4}
+  m_SizeDelta: {x: 802, y: 451}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &911377402 stripped
 Transform:
@@ -1814,7 +1822,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 4341b1a05aefb8141b5b05b902394585, type: 2}
+      objectReference: {fileID: 2100000, guid: 4b60910a0fa3844408aa831634d5f255, type: 2}
     - target: {fileID: -927199367670048503, guid: 27a8c978a512d634d92a3c06b785f6c6,
         type: 3}
       propertyPath: m_Name
@@ -3675,7 +3683,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1

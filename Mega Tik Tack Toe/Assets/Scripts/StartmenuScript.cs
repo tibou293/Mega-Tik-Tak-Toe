@@ -10,9 +10,16 @@ public class StartmenuScript : MonoBehaviour
     public GameObject StartButton;
     public GameObject TutorialButton;
     public GameObject TitleText;
-    public int yStartButton = 90;
-    public int yTutorialButton = 117;
-    public int yTitleText = 271;
+
+    //Start Y-Werte
+    public int StartYStartButton = 90; 
+    public int StartYTutorialButton = 117;
+    public int StartYTitleText = 300;
+
+    //End Y-Werte
+    public int EndYStartButton = 194;
+    public int EndYTutorialButton = 190;
+    public int EndYTitleText = 40;
 
 
     // Start is called before the first frame update
@@ -20,17 +27,16 @@ public class StartmenuScript : MonoBehaviour
     { 
 
     }
+
+
     // Update is called once per frame
     void Update()
     {
         beforeStart();
         preferencesWheelRotation();
-        //änderung();
         StartCoroutine(introGame());
+        QuitGame();
     }
-
-
-
 
 
     //Wheel Rotation
@@ -51,67 +57,61 @@ public class StartmenuScript : MonoBehaviour
     }
 
 
-
+    //setzt auf Startposition (nicht sichtbar)
     void beforeStart()
     {
-        StartButton.transform.position = new Vector3 (173, yStartButton, 199);
-        TutorialButton.transform.position = new Vector3(319, yTutorialButton, 249);
-        TitleText.transform.position = new Vector3(237, yTitleText, 229);
+        StartButton.transform.position = new Vector3 (173, StartYStartButton, 199);
+        TutorialButton.transform.position = new Vector3(319, StartYTutorialButton, 249);
+        TitleText.transform.position = new Vector3(237, StartYTitleText, 229);
     }
 
-
+    //bewegt Objekte an endgültige Position
     IEnumerator introGame()
     {
-        if (yTitleText > 133)
+        if (StartYTitleText > EndYTitleText)
         {
-            yTitleText--;
+            StartYTitleText--;
         }
         else
         {
-            yTitleText = 133;
+            StartYTitleText = EndYTitleText;
         }
+
+        yield return new WaitForSeconds(2.5f);
+
+        if (StartYStartButton < EndYStartButton)
+        {
+            StartYStartButton++;
+        }
+        else
+        {
+            StartYStartButton = EndYStartButton;
+        }
+
         yield return new WaitForSeconds(1f);
 
-        if (yStartButton < 194)
+        if (StartYTutorialButton < EndYTutorialButton)
         {
-            yStartButton++;
+            StartYTutorialButton++;
         }
         else
         {
-            yStartButton = 194;
-        }
-        yield return new WaitForSeconds(1f);
-        if (yTutorialButton < 190)
-        {
-            yTutorialButton++;
-        }
-        else
-        {
-            yTutorialButton = 190;
+            StartYTutorialButton = EndYTutorialButton;
         }
     }
+
+    void QuitGame()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Debug.Log("Close Application");
+            Application.Quit();
+        }
+    }
+
+
 }
 
-   /* void änderung()
-    {
-        if (yStartButton < 194)
-        {
-            yStartButton++;
-        }
-        else
-        {
-            yStartButton = 194;
-        }
-
-        if (yTutorialButton < 190)
-        {
-            yTutorialButton++;
-        }
-        else
-        {
-            yTutorialButton = 190;
-        }
-    }*/
 
 
 
