@@ -25,6 +25,9 @@ public class GameController : MonoBehaviour
     public Button closeButton;
     public Button[] winningGrid;
 
+    public Color wantedColor;
+
+    public GameObject[] savetyPanel;
 
     public int[] winners; //Gewinner eines großen Feldes
 
@@ -155,6 +158,11 @@ public class GameController : MonoBehaviour
 
         markedSpaces[WhichNumber] = whoTurn + 1;
         turnCount++;
+
+        
+        ColorBlock cb = tictactoeSpaces[WhichNumber].colors;
+        cb.disabledColor = wantedColor;
+        tictactoeSpaces[WhichNumber].colors = cb;
 
         if (turnCount > 4)
         {
