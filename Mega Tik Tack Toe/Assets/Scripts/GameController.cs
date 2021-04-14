@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour
 {
@@ -302,6 +303,11 @@ public class GameController : MonoBehaviour
     {
         Application.Quit();
         Debug.Log("Close Application");
+    }
+
+    public void returnToStart()
+    {
+        SceneManager.LoadScene(0);
     }
 
 }
