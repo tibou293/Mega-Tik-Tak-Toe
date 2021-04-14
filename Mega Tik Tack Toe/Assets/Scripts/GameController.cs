@@ -27,10 +27,11 @@ public class GameController : MonoBehaviour
 
     public Color wantedColor;
 
-    public GameObject[] savetyPanel;
+    public Image[] savetyPanel;
 
     public int[] winners; //Gewinner eines großen Feldes
 
+    public Color ColorForSavety;
 
     // Start is called before the first frame update
     void Start()
@@ -45,6 +46,8 @@ public class GameController : MonoBehaviour
         for(int i = 0; i < winners.Length; i++)
         {
             winners[i] = -100;
+            savetyPanel[i].GetComponent<Image>().color = new Color32(0, 0, 0, 0);
+            savetyPanel[i].GetComponent<Image>().raycastTarget = false;
         }
         whoTurn = 0;
         turnCount = 0;
@@ -190,7 +193,7 @@ public class GameController : MonoBehaviour
     void SetNewInteractable(int bigSpaceNumber)
     {
         int n = 0;
-        for(int i = 0; i < 81; i++)
+        for (int i = 0; i < 81; i++)
         {
             if (markedSpaces[i] > 0) continue;
 
@@ -198,16 +201,29 @@ public class GameController : MonoBehaviour
             bool interactable = bigSpaceNumber == -1 || (i / 9) == bigSpaceNumber;
             tictactoeSpaces[i].interactable = interactable;
             n += interactable ? 1 : 0;
+
+
         }
+        
+        //tried to use images to disable buttons as a savety Grid
+       /* int k = 0;
+        for(int i = 0; i < 9; i++)
+        {
+            if (markedSpaces[i] > 0) continue;
+
+            savetyPanel[bigSpaceNumber].GetComponent<Image>().color = new Color32(225, 225, 225, 225);
+            savetyPanel[bigSpaceNumber].GetComponent<Image>().raycastTarget = false;
+            
+
+        }*/
+
 
         if (n == 0 && bigSpaceNumber == -1) WinnerDisplay(-1);
         if (n == 0) SetNewInteractable(-1);
-        
     }
-
     
 
-
+   
 
 
 
