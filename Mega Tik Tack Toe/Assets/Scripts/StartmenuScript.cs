@@ -56,6 +56,11 @@ public class StartmenuScript : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
+    //Auf Knopfdruck "Tutorial" startet
+    public void startTutorialScene()
+    {
+        SceneManager.LoadScene(2);
+    }
 
     //setzt auf Startposition (nicht sichtbar)
     void beforeStart()
